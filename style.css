@@ -2,16 +2,31 @@
     margin: 0;
     padding: 0;
  }
+ body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto Mono', monospace;
+ }
+ #button{
+ }
+ #colorPicker{
+    border: none;
+
+ }
 #gridContainer{
     display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: #2196F3;
+    grid-template-columns: repeat(16, 1fr);
+    background-color: yellow;
     padding: 10px;
-};
+}
 .gridItem{
-    color: white;
-    border: 1rem solid black;
-    font-size: 30px;
-    text-align: center;
-};
-
+    background-color: white;
+    border: 1px solid black;
+    padding: 1rem;
+}
+.gridItem:hover{
+    background-color: black;
+}
