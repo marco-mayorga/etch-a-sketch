@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+ }
+#gridContainer{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+};
+.gridItem{
+    color: white;
+    border: 1rem solid black;
+    font-size: 30px;
+    text-align: center;
+};
+
