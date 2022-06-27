@@ -115,3 +115,7 @@
     border-radius: 50%;
   }
   .slider::-moz-focus-outer { border: 0; }
+
+  .sliderText{
+    text-align: center;
+  }
