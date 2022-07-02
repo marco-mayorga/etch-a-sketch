@@ -25,13 +25,7 @@
 }
 .gridItem{
     background-color: black;
-    border: 1px solid white;
     padding: 1rem;
-    cursor: pointer;
-}
-.gridItem:hover{
-    background-color: white;
-    border: 1px solid black;
 }
 
  .gridOptions{
@@ -60,15 +54,18 @@
     height: 3rem;
     cursor: pointer;
 }
+/* Color picker circle shape for webkit browsers */
 #colorPicker::-webkit-color-swatch{
     border-radius: 50%;
     border: 1px solid black;
 }
+
+/* Color picker circle shape for moz browsers */
 #colorPicker::-moz-color-swatch{
     border-radius: 50%;
     border: 1px solid black;
 }
- #button{
+ .button{
     font-weight:600;
     border: 1px solid black;
     color: black;
@@ -81,7 +78,7 @@
     cursor: pointer;
     transition: .75s;
  }
- #button:hover{
+ .clickedButton{
     color: white;
     background-color: black;
  }
