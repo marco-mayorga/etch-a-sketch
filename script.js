@@ -27,25 +27,36 @@ let gridItems = document.querySelectorAll(".gridItem");
 for (const gridItem of gridItems){
     gridItem.addEventListener("mouseover", colorGridItems);
 }
-
 colorMode.addEventListener("click", () => {
     colorMode.classList.toggle("clickedButton");
     randomColorMode.classList = "button";
     eraser.classList = "button";
+    for (const gridItem of gridItems){
+        gridItem.removeEventListener("mouseover", randomColorModeFunc);
+        gridItem.removeEventListener("mouseover", eraserFunc);
+        gridItem.addEventListener("mouseover", colorGridItems);
+    }
 })
 randomColorMode.addEventListener("click", () => {
     randomColorMode.classList.toggle("clickedButton");
     colorMode.classList = "button";
     eraser.classList = "button";
     for (gridItem of gridItems){
-        gridItem.addEventListener("mouseover", randomColorModeFunc)
+        gridItem.removeEventListener("mouseover", colorGridItems);
+        gridItem.removeEventListener("mouseover", eraserFunc);
+        gridItem.addEventListener("mouseover", randomColorModeFunc);
     }
 })
 eraser.addEventListener("click", () => {
     eraser.classList.toggle("clickedButton");
     colorMode.classList = "button";
     randomColorMode.classList = "button";
-    // gridItem.style.backgroundColor = "black"
+    for (const gridItem of gridItems){
+        gridItem.removeEventListener("mouseover", colorGridItems);
+        gridItem.removeEventListener("mouseover", randomColorModeFunc);
+        gridItem.addEventListener("mouseover", eraserFunc);
+    }
+    
 })
 
 clearSketch.addEventListener("click", () => {
@@ -60,10 +71,19 @@ function colorGridItems() {
     this.style.backgroundColor = `${colorPickerValue.value}`;
 }
 
+// etch a sketch eraser
+
+function eraserFunc(){
+    for (const gridItem of gridItems){
+        this.style.backgroundColor = "black"
+    }
+}
+
+// random etch a sketch color
 function randomColorModeFunc() {
     let randomR = Math.floor(Math.random() * 256);
     let randomG = Math.floor(Math.random() * 256);
     let randomB = Math.floor(Math.random() * 256);
-    gridItems.style.backgroundColor =`rgb(${randomR}, ${randomG}, ${randomB})`;
-    console.log(gridItems.style.backgroundColor)
+    this.style.backgroundColor =`rgb(${randomR}, ${randomG}, ${randomB})`;
+    console.log(gridItems.style.backgroundColor);
 }
