@@ -17,20 +17,36 @@
   <body>
     <h1>Etch-A-Sketch</h1>
     <div class="content">
-      <div id="gridContainer"></div>
+      <div class="gridContainer"></div>
       <div class="gridOptions">
         <div id="colorChangingOptions">
           <input type="color" id="colorPicker" value="#FFFFFF" />
-          <button class="button clickedButton">Color Mode</button>
-          <button class="button">Random Color Mode</button>
+          <button
+            class="button clickedButton"
+            onclick="chooseColor('customColor')"
+          >
+            Color Mode
+          </button>
+          <button class="button" onclick="chooseColor('random')">
+            Random Color Mod
+          </button>
         </div>
         <div id="colorErasingOptions">
-          <button class="button">Eraser</button>
-          <button class="button">Clear Sketch</button>
+          <button class="button" onclick="chooseColor('black')">Eraser</button>
+          <button class="button" onclick="resetSketchBoard()">
+            Clear Sketch
+          </button>
         </div>
         <div id="sliderAndSliderText">
-          <div class="sliderText"></div>
-          <input type="range" min="1" max="64" value="16" class="slider" />
+          <div class="sliderText">16X16</div>
+          <input
+            type="range"
+            min="2"
+            max="64"
+            value="16"
+            class="slider"
+            onchange="chooseSize(this.value)"
+          />
         </div>
       </div>
     </div>
