@@ -54,3 +54,33 @@ function resetSketchBoard(){
     let gridItems = gridContainer.querySelectorAll("div");
     gridItems.forEach((div) => div.style.backgroundColor = "black");
 }
+
+let buttons = document.querySelectorAll("button");
+console.log(buttons);
+
+let colorMode = buttons[0];
+let randColorMode = buttons[1];
+let eraser = buttons[2];
+console.log(colorMode);
+console.log(randColorMode);
+console.log(eraser);
+
+
+colorMode.addEventListener("click", ()=>{
+        colorMode.classList.toggle("clickedButton");
+        randColorMode.classList = "button";
+        eraser.classList = "button";
+        console.log(colorMode);
+})
+randColorMode.addEventListener("click", ()=>{
+        randColorMode.classList.toggle("clickedButton");
+        colorMode.classList = "button";
+        eraser.classList = "button";
+        console.log(randColorMode);
+})
+eraser.addEventListener("click", ()=>{
+        eraser.classList.toggle("clickedButton");
+        colorMode.classList = "button";
+        randColorMode.classList = "button";
+        console.log(eraser);
+})
