@@ -20,7 +20,7 @@ function makeBoard(size){
     let amount = size*size
     for(let i = 0; i <= amount; i++){
         let gridItems = document.createElement("div");
-        gridItems.style.background = "black"
+        gridItems.style.background = "rgb(0, 0, 0)";
         gridContainer.insertAdjacentElement("beforeend",gridItems);
         gridItems.addEventListener("mouseover", colorOfGrid);
 }}
@@ -41,7 +41,8 @@ function colorOfGrid(){
         let colorPickerValue = document.querySelector("#colorPicker");
         this.style.backgroundColor = `${colorPickerValue.value}`;
     }else{
-        this.style.backgroundColor = color;
+        let colorPickerValue = document.querySelector("#colorPicker");
+        this.style.backgroundColor = `${colorPickerValue.value}`;
     }
 }
 
