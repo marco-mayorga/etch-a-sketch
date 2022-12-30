@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
-    <title>Etch-A-Sketch</title>
-  </head>
-  <body>
-    <h1>Etch-A-Sketch</h1>
-    <div class="content">
-      <div class="gridContainer"></div>
-      <div class="gridOptions">
-        <div id="colorChangingOptions">
-          <input type="color" id="colorPicker" value="#FFFFFF" />
-          <button
-            class="button clickedButton"
-            onclick="chooseColor('customColor')"
-          >
-            Color Mode
-          </button>
-          <button class="button" onclick="chooseColor('random')">
-            Random Color Mod
-          </button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js" defer></script>
+        <title>Etch-A-Sketch</title>
+    </head>
+    <body>
+        <h1>Etch-A-Sketch</h1>
+        <div class="content">
+            <div class="gridContainer"></div>
+            <div class="gridOptions">
+                <div id="colorChangingOptions">
+                    <input type="color" id="colorPicker" value="#FFFFFF" />
+                    <button
+                        class="button clickedButton"
+                        onclick="chooseColor('customColor')">
+                        Color Mode
+                    </button>
+                    <button class="button" onclick="chooseColor('random')">
+                        Random Color Mod
+                    </button>
+                </div>
+                <div id="colorErasingOptions">
+                    <button class="button" onclick="chooseColor('black');">
+                        Eraser
+                    </button>
+                    <button class="button" onclick="resetSketchBoard()">
+                        Clear Sketch
+                    </button>
+                </div>
+                <div id="sliderAndSliderText">
+                    <div class="sliderText">16X16</div>
+                    <input
+                        type="range"
+                        min="2"
+                        max="64"
+                        value="16"
+                        class="slider"
+                        onchange="chooseSize(this.value)" />
+                </div>
+            </div>
         </div>
-        <div id="colorErasingOptions">
-          <button class="button" onclick="chooseColor('black');">Eraser</button>
-          <button class="button" onclick="resetSketchBoard()">
-            Clear Sketch
-          </button>
-        </div>
-        <div id="sliderAndSliderText">
-          <div class="sliderText">16X16</div>
-          <input
-            type="range"
-            min="2"
-            max="64"
-            value="16"
-            class="slider"
-            onchange="chooseSize(this.value)"
-          />
-        </div>
-      </div>
-    </div>
-  </body>
+    </body>
 </html>
